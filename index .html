@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2022 by lvvasile (http://jsbin.com/bojenub/4/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Ceas color</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=3RoA5IMhDjBc9qasqPgO2RGMlSBAbzj67_-4Deu-J7oKccr1ZAJEiwJgt2jMnNA_U9FS9c6r6pyj58cRMsJl_Q" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9qc2Jpbi5jb20vYm9qZW51Yi80L2Rvd25sb2Fk"/><style id="jsbin-css">
+html, body {
+  height: 100%;
+}
+
+#clock {
+  text-align: center;
+  position: relative;
+  top: 50%;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 5em;
+}
+/* ca sa verifici un element ii atribui caracteristica 
+display : none; si acel element ar trebui sa dispara*/
+
+
+
+</style>
+</head>
+<body>
+<div id="clock">12:13:14</div>
+<script id="jsbin-javascript">
+function colorClock(){
+  var date = new Date();
+
+  var hours = date.getHours();
+  var minutes = date.getMinutes();
+  var seconds = date.getSeconds();
+
+  if (hours <= 9) {
+    hours = "0" + hours;
+  }
+  if (minutes <= 9) {
+    minutes = "0" + minutes;
+  }
+  if (seconds <= 9) {
+    seconds = "0" + seconds;
+  }
+
+  var clockFace = hours + ':' + minutes + ':' + seconds;
+  var hexColor = '#' + hours + minutes + seconds;
+
+  document.getElementById('clock').innerHTML = clockFace;
+  document.body.style.background = hexColor;
+
+  setTimeout(function() {
+    colorClock();
+  }, 1000);
+}
+
+colorClock();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
